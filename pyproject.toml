@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "devchallenge-excel"
+version = "0.1.0"
+description = ""
+authors = ["Andrii Hermak <hermak20102004@gmail.com>"]
+readme = "README.md"
+packages = [{include = "devchallenge_excel"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.5"
+djangorestframework = "^3.14.0"
+psycopg2 = "^2.9.8"
+auto-dataclass = "^0.1.6"
+dependency-injector = "^4.41.0"
+django-annoying = "^0.10.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
