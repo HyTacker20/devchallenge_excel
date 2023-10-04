@@ -56,14 +56,10 @@ class Cell(models.Model):
 
     def _parse_operation(self):
         expression = re.findall(r'[a-zA-Z_]\w*|\d+\.\d+|\d+|[+\-*/()]|[-\w]+', self.value)
-        print(expression)
         return expression
 
     def _get_cell_result(self, cell_name):
-        print(cell_name)
         cell = Cell.objects.filter(name__iexact=cell_name, sheet=self.sheet).first()
-        print(self.sheet)
-        print(Cell.objects.all())
         if not cell:
             raise UnknownCellException(f"Passed undefined cell {cell}")
         return cell.calculate_result()

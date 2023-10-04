@@ -36,12 +36,10 @@ class CellService:
             dto.sheet = self.sheet_service.create_instance(sheet_dto)
         else:
             dto.sheet = self.sheet_service.get_instance(dto.sheet.name)
-        print(dto.sheet)
 
         if self.is_exist(dto):
             return self.update_instance(dto)
         cell = self.repository.create_instance(dto)
-        print(cell)
         return cell
 
     def update_instance(self, dto: NewCellDTO):
